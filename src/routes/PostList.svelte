@@ -4,14 +4,23 @@
 </script>
 
 {#if $posts.length > 0}
-    {#each $posts as post}
-        <a href="/post/{post.id}">
-            <Post {post} preview />
-        </a>
-    {/each}
+    <div>
+        {#each $posts as post}
+            <a href="/post/{post.id}">
+                <Post {post} preview />
+            </a>
+        {/each}
+    </div>
 {/if}
 
 <style>
+    div {
+        display: flex;
+        flex-wrap: wrap;
+        flex-basis: 300px;
+        gap: 10px;
+    }
+
     a {
         text-decoration: none;
         color: black;
